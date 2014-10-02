@@ -1,16 +1,18 @@
 <!doctype html>
 <html>
  <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link type='text/css' rel="stylesheet" href="style.css">
 <title>XKCD Password Generator</title>
 <?php require'logic.php'; ?>
 </head>
 <body>
 
+
 <h2>Password Generator</h2>
 
 <form method="GET" action="index.php" >
-<label>Number of words (1-8) </label>
+<label>Number of words (1-5) </label>
 <input type="text" name="count" value=<?=$wordno?>>
 <br>
 <label>Include symbol</label>

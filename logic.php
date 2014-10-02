@@ -4,7 +4,7 @@ $wordlist=array ('niko', 'lucy','arielle', 'canbow', 'puppies', 'kitties', 'supe
 
 if (empty($_GET['count'])){
 }
-else if ($_GET['count']>0 && $_GET['count']<=8){
+else if ($_GET['count']>0 && $_GET['count']<=5){
 $wordno=$_GET['count'];
 }
 else {$count=false;
