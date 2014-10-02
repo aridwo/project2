@@ -1,14 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Password Generator</title>
+<!doctype html>
+<html>
+ <head>
+<link type='text/css' rel="stylesheet" href="style.css">
+<title>XKCD Password Generator</title>
+<?php require'logic.php'; ?>
 </head>
-
 <body>
 
-<?php include ('form.php');?>
-<?php include ('logic.php');?>
-<?php include ('style.css');?>
+<h2>Password Generator</h2>
+
+<form method="GET" action="index.php" >
+<label>Number of words (1-8) </label>
+<input type="text" name="count" value=<?=$wordno?>>
+<br>
+<label>Include symbol</label>
+<input type="checkbox" name='symbol' <?=$symbol?> >
+<br>
+
+<label>Include number</label>
+<input type="checkbox" name="number" <?=$number?> >
+</br>
+
+<input type="submit" name="submit" value="SUBMIT">
+</form>
+<h2>Here's Your Password:</h2>
+<p id="pw"><?php foreach ($password as $key => $value) {echo $value.' ';}?></p>
+
 </body>
 </html>

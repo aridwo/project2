@@ -1,51 +1,46 @@
 <?php
 
-$wordlist=array ('niko', 'lucy',
-'arielle', 'canbow', 'puppies', 'kitties', 'super', 'dynamic', 'dworkin', 'pizza', 'turtle', 'harvard', 'digital', 'beachboys');
+$wordlist=array ('niko', 'lucy','arielle', 'canbow', 'puppies', 'kitties', 'super', 'dynamic', 'massachusetts', 'boston', 'manhattan', 'hollywood', 'sculpture', 'funky', 'chicken', 'wassup', 'racecar', 'schnitzel', 'dworkin', 'pizza', 'turtle', 'harvard', 'digital', 'beachboys', 'radiator', 'socrates', 'pluto', 'venus', 'mars');
 
-if (isset($_POST['count'])){
-	$count = $_POST['count'];
-
-	
-if(!is_numeric($count)){
-		return 'please correctly re-enter the number of words.';}
-		else {$count = 1;}
-
-	
-if (isset($_POST['symbol'])){
-	$symbol = true;}
-	else {$symbol = false;}
-	
-	if (isset($_POST['number'])){
-	$number = true;}
-	else {$number = false;}
-	
-	
-		
-	
-		
-		$selected_words = [];
-		$symbols = ['#','$','%','&','*'];
-		$numbers = [0,1,2,3,4,5,6,7,8,9];
-		
-		$password=[];
-		for($i = 0;$1<$count; $i++){
-			$max = count($words) -1;
-			$rand = rand(0,$max);
-			
-			$word = $words[$rand];
-			echo $word . '<br />';
-			array_push($selected_words, $word);}
-			
-			if ($symbol=='checked') {
-$symbolid=rand(0,count($symbolarray)-1);
-$word=$word.$symbolarray[$symbolid];
-$password[$count-1]=$word;
+if (empty($_GET['count'])){
 }
-			
-			
-			if ($number=='checked') {
-$numberid=rand(0,9);
-$word=$word.$numberid;
-$password[$count-1]=$word;
-}}
+else if ($_GET['count']>0 && $_GET['count']<=8){
+$wordno=$_GET['count'];
+}
+else {$count=false;
+}
+
+if (isset($_GET['symbol'])){
+$symbol='true';
+}
+else {$symbol=false;
+}
+
+
+if (isset($_GET['number'])){
+$number='true';
+}
+else {$number=false;
+}
+
+$symbols= ['$','*','@','!','&','%'];
+$numbers= ['1','2','3','4','5','6','7','8','9'];
+
+$password=[];
+for ($i=0; $i<$wordno; $i++) {
+$wordid=rand(0,count($wordlist)-1);
+$word=$wordlist[$wordid];
+array_push($password, $word);
+}
+
+if ($symbol=='true') {
+$symbolid=rand(0,count($symbols)-1);
+$word=$word.$symbols[$symbolid];
+$password[$wordno-1]=$word;
+}
+
+if ($number=='true') {
+$numberid=rand(0,count($numbers)-1);
+$word=$word.$numbers[$numberid];
+$password[$wordno-1]=$word;
+}
