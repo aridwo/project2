@@ -6,7 +6,7 @@
 <title>XKCD Password Generator</title>
 <?php require'logic.php'; ?>
 </head>
-<body>
+<body> 
 
 
 <h2>Password Generator</h2>

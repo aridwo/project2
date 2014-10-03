@@ -2,7 +2,7 @@
 
 $wordlist=array ('niko', 'lucy','arielle', 'canbow', 'puppies', 'kitties', 'super', 'dynamic', 'massachusetts', 'boston', 'manhattan', 'hollywood', 'sculpture', 'funky', 'chicken', 'wassup', 'racecar', 'schnitzel', 'dworkin', 'pizza', 'turtle', 'harvard', 'digital', 'beachboys', 'radiator', 'socrates', 'pluto', 'venus', 'mars');
 
-if (empty($_GET['count'])){
+if (empty($_GET['count'])){ 
 }
 else if ($_GET['count']>0 && $_GET['count']<=5){
 $wordno=$_GET['count'];
