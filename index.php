@@ -7,6 +7,7 @@
 <?php require'logic.php'; ?>
 </head>
 <body> 
+<div id="form">
 
 
 <h2>Password Generator</h2>
@@ -27,6 +28,7 @@
 </form>
 <h2>Here's Your Password:</h2>
 <p id="pw"><?php foreach ($password as $key => $value) {echo $value.' ';}?></p>
+</div>
 
 </body>
 </html>

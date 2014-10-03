@@ -16,7 +16,6 @@ $symbol='true';
 else {$symbol=false;
 }
 
-
 if (isset($_GET['number'])){
 $number='true';
 }
